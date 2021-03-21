@@ -1,0 +1,2 @@
+rootProject.name='FLAGSONE'
+include ':app'

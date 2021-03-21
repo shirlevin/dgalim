@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/easymode"
+    tools:context=".EasyMode">
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="CHOOSE THE RIGHT FLAG"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/twCountryName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="COUNTRY NAME"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnTopLeft"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.626" />
+
+    <ImageButton
+        android:id="@+id/btnTopRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="100dp"
+        android:paddingHorizontal="0dp"
+        android:paddingVertical="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.251"
+        app:srcCompat="@drawable/es" />
+
+    <ImageView
+        android:id="@+id/ivHeart2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBottomLeft"
+        app:layout_constraintVertical_bias="0.332"
+        app:srcCompat="@drawable/heart" />
+
+    <ImageButton
+        android:id="@+id/btnBottomRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="100dp"
+        android:paddingHorizontal="0dp"
+        android:paddingVertical="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTopRight"
+        app:srcCompat="@drawable/es" />
+
+    <ImageButton
+        android:id="@+id/btnTopLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="150dp"
+        android:paddingHorizontal="0dp"
+        android:paddingVertical="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.251"
+        app:srcCompat="@drawable/es" />
+
+    <ImageButton
+        android:id="@+id/btnBottomLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="8dp"
+        android:paddingHorizontal="0dp"
+        android:paddingVertical="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTopLeft"
+        app:srcCompat="@drawable/es" />
+
+    <TextView
+        android:id="@+id/twTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10:00"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/etCountryName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:ignore="UnknownId" />
+
+    <ImageView
+        android:id="@+id/ivHeart1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:layout_marginStart="116dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBottomLeft"
+        app:layout_constraintVertical_bias="0.332"
+        app:srcCompat="@drawable/heart" />
+
+    <ImageView
+        android:id="@+id/ivHeart3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="116dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBottomRight"
+        app:layout_constraintVertical_bias="0.332"
+        app:srcCompat="@drawable/heart" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
