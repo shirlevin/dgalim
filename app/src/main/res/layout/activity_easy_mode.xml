@@ -36,8 +36,8 @@
 
     <ImageButton
         android:id="@+id/btnTopRight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="150dp"
         android:layout_marginEnd="100dp"
         android:paddingHorizontal="0dp"
@@ -51,19 +51,18 @@
     <ImageView
         android:id="@+id/ivHeart2"
         android:layout_width="50dp"
+        android:layout_marginBottom="100dp"
         android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnBottomLeft"
-        app:layout_constraintVertical_bias="0.332"
         app:srcCompat="@drawable/heart" />
 
     <ImageButton
         android:id="@+id/btnBottomRight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="100dp"
         android:paddingHorizontal="0dp"
@@ -74,8 +73,8 @@
 
     <ImageButton
         android:id="@+id/btnTopLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="150dp"
         android:paddingHorizontal="0dp"
@@ -88,8 +87,8 @@
 
     <ImageButton
         android:id="@+id/btnBottomLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="8dp"
         android:paddingHorizontal="0dp"
@@ -115,12 +114,10 @@
         android:id="@+id/ivHeart1"
         android:layout_width="50dp"
         android:layout_height="50dp"
-
+        android:layout_marginBottom="100dp"
         android:layout_marginStart="116dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnBottomLeft"
-        app:layout_constraintVertical_bias="0.332"
         app:srcCompat="@drawable/heart" />
 
     <ImageView
@@ -128,10 +125,20 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginEnd="116dp"
+        android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnBottomRight"
-        app:layout_constraintVertical_bias="0.332"
         app:srcCompat="@drawable/heart" />
+    <TextView
+        android:id="@+id/twDifficulty_easy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Difficulty - Easy"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,23 +25,16 @@ import java.util.Random;
 
 public class EasyMode extends AppCompatActivity {
     Random rand;
-    private TextView countdownText;
+    private TextView countdownText, mode, countryName;
     private CountDownTimer count_down_timer;
     private long timeLeftInMillSeconds = 10000; //10
-    private boolean timerRunning;
-    private boolean isTimeOut;
-    private ImageButton btnTopLeft;
-    private ImageButton btnTopRight;
-    private ImageButton btnBottomLeft;
-    private ImageButton btnBottomRight;
+    private boolean timerRunning,isTimeOut;
+    private ImageButton btnTopLeft, btnTopRight, btnBottomLeft, btnBottomRight;
     private Map<String, Integer> easy_countries_map;
-    private int[] all_countries;
-    private int[] easy_countries_int;
+    private int[] easy_countries_int,four_flags;
     private  String[] easy_countries_names;
     private ImageView heart1, heart2, heart3;
-    private TextView countryName;
     private  ImageButton[] buttons;
-    private int[] four_flags;
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +42,7 @@ public class EasyMode extends AppCompatActivity {
         rand = new Random();
         setContentView(R.layout.activity_easy_mode);
 
+        mode = findViewById(R.id.twDifficulty_easy);
         countdownText = findViewById(R.id.twTimer);
         btnBottomLeft = findViewById(R.id.btnBottomLeft);
         btnBottomRight = findViewById(R.id.btnBottomRight);
@@ -61,20 +55,11 @@ public class EasyMode extends AppCompatActivity {
         isTimeOut = false;
         four_flags = new int[4];
         buttons = new ImageButton[]{btnBottomLeft,btnBottomRight,btnTopLeft,btnTopRight};
-
-
         easy_countries_map = new HashMap<>();
-        all_countries = new int[]{R.drawable.ar, R.drawable.at, R.drawable.au, R.drawable.ax, R.drawable.az, R.drawable.ba, R.drawable.bb, R.drawable.be, R.drawable.bg,
-                R.drawable.bt, R.drawable.ca, R.drawable.ch, R.drawable.cl, R.drawable.cr, R.drawable.cu, R.drawable.cz, R.drawable.de, R.drawable.dk,
-                R.drawable.fi, R.drawable.fr, R.drawable.ge, R.drawable.gn, R.drawable.gr, R.drawable.gw, R.drawable.it, R.drawable.jm, R.drawable.jp,
-                R.drawable.ne, R.drawable.ng, R.drawable.pr, R.drawable.sc, R.drawable.sd, R.drawable.se, R.drawable.sl, R.drawable.sr, R.drawable.td,
-                R.drawable.tg, R.drawable.th, R.drawable.tj, R.drawable.tr, R.drawable.ua, R.drawable.uk, R.drawable.us, R.drawable.ve, R.drawable.vn,R.drawable.ru};
-        easy_countries_int = new int[]{R.drawable.br,R.drawable.mx,R.drawable.es,R.drawable.de,R.drawable.uk, R.drawable.us, R.drawable.jp,R.drawable.au, R.drawable.ca, R.drawable.cn ,R.drawable.ru,R.drawable.in};
-        easy_countries_names = new String[]{"Brazil","Mexico","Spain","Germany","United Kingdom", "USA", "Japan","Australia","Canada","China","Russia","India"};
 
-        for (int i = 0; i< easy_countries_names.length; i++){
-            easy_countries_map.put(easy_countries_names[i],easy_countries_int[i]);
-        }
+        initAgain();
+        initNames();
+        easy_countries_names_adjust();
 
         //------------------------------------------------------------------------
         createRound();
@@ -85,7 +70,15 @@ public class EasyMode extends AppCompatActivity {
         easy_countries_int = new int[]{R.drawable.br,R.drawable.mx,R.drawable.es,R.drawable.de,R.drawable.uk, R.drawable.us, R.drawable.jp,R.drawable.au, R.drawable.ca, R.drawable.cn ,R.drawable.ru,R.drawable.in};
 
     }
+    public void initNames(){
+        easy_countries_names = new String[]{"Brazil","Mexico","Spain","Germany","United Kingdom", "USA", "Japan","Australia","Canada","China","Russia","India"};
+    }
 
+    public void easy_countries_names_adjust(){
+        for (int i = 0; i< easy_countries_names.length; i++){
+            easy_countries_map.put(easy_countries_names[i],easy_countries_int[i]);
+        }
+    }
 
     public void adjustFlagsButtons() {
         int x;
@@ -94,7 +87,7 @@ public class EasyMode extends AppCompatActivity {
             x = rand.nextInt(easy_countries_names.length);
             countryName.setText(getKey(easy_countries_names[x]));
             easy_countries_int = ArrayUtils.removeElement(easy_countries_int,easy_countries_map.get(easy_countries_names[x]));
-            easy_countries_names = ArrayUtils.removeElement(easy_countries_names, easy_countries_names[x]);
+            easy_countries_names = ArrayUtils.removeElement(easy_countries_names, countryName.getText());
 
             for (int i=0; i< 4; i++){
                 x = rand.nextInt(easy_countries_int.length);
@@ -104,7 +97,7 @@ public class EasyMode extends AppCompatActivity {
             }
 
             int num; // שם דגל מתוך הארבעה שיהיה זהה למדינה המבוקשת
-            num = rand.nextInt(4);
+            num = rand.nextInt(buttons.length);
             set_win_button(num);
             wrong_answers(num);}
         else
@@ -288,9 +281,6 @@ public class EasyMode extends AppCompatActivity {
         adjustFlagsButtons();
         adjustHearts();
         initNames();
-    }
-    public void initNames(){
-        easy_countries_names = new String[]{"Brazil","Mexico","Spain","Germany","United Kingdom", "USA", "Japan","Australia","Canada","China","Russia","India"};
     }
 
     public void createAnotherRound(){
